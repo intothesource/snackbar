@@ -1,0 +1,22 @@
+{
+  "name": "snackbar",
+  "version": "1.0.0",
+  "description": "Small fadein notifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intothesource/snackbar.git"
+  },
+  "keywords": [
+    "snackbar"
+  ],
+  "author": "Ramon Valk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intothesource/snackbar/issues"
+  },
+  "homepage": "https://github.com/intothesource/snackbar#readme"
+}
