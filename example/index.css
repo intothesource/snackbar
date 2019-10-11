@@ -1,0 +1,10 @@
+[data-its-snackbar] {
+}
+
+[data-its-snackbar-content] {
+    color: white;
+}
+
+[data-its-snackbar-button] {
+    color: blueviolet;
+}
