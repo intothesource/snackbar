@@ -1,11 +1,11 @@
 import { Snackbar } from '../snackbar.js';
 
 const triggerAppleNotification = () => {
-    Snackbar('An apple a day keeps your mom at bay', 2000, 'eat apple', appleCallback);
+    Snackbar('An apple a day keeps your mom at bay', 3000, 'eat apple', appleCallback);
 }
 
 const triggerBananaNotification = () => {
-    Snackbar('Bananas something something', 4000, 'eat banana', bananaCallback);
+    Snackbar('Time flies like an arrow - but fruit flies like a banana.', 6000, 'eat banana', bananaCallback);
 }
 
 const appleCallback = () => {
