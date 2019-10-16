@@ -51,7 +51,7 @@ const removeSnackbar = () => {
     }
 }
 
-const createSnackbar = (content, button, timeout) => {
+const createSnackbar = (content, button) => {
     let snackbar = createContainerElement();
     snackbar.appendChild(createContentElement(content));
     if (button) {
