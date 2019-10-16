@@ -4,17 +4,17 @@ const snackbarArray = [];
 let snackbarLooperBusy = false;
 let snackbarDelay = 300;
 
-export const Snackbar = (content, button, timeout) => {
+export const Snackbar = (content, timeout, button, callback) => {
     if (content && timeout) {
         snackbarArray.push({
-            'element': createSnackbar(content, button),
+            'element': createSnackbar(content, button, callback),
             'time': timeout,
         });
 
         if (!snackbarLooperBusy) {
             snackbarLooper();
         }
-    } else throw "No content or time provided for snackbar!";
+    } else throw 'No content or time provided for snackbar!';
 }
 
 const snackbarLooper = () => {
@@ -51,11 +51,11 @@ const removeSnackbar = () => {
     }
 }
 
-const createSnackbar = (content, button) => {
+const createSnackbar = (content, button, callback) => {
     let snackbar = createContainerElement();
     snackbar.appendChild(createContentElement(content));
-    if (button) {
-        snackbar.appendChild(createButtonElement(button));
+    if (button && callback) {
+        snackbar.appendChild(createButtonElement(button, callback));
     }
     return snackbar;
 }
@@ -73,11 +73,15 @@ const createContentElement = (content) => {
     return snackbarContentElement;
 }
 
-const createButtonElement = (button) => {
+const createButtonElement = (button, callback) => {
+    if (button && callback) {
     let snackbarButtonElement = document.createElement('button');
     snackbarButtonElement.setAttribute(DATA_BUTTON, '');
+    snackbarButtonElement.addEventListener('click', callback);
     snackbarButtonElement.innerHTML = button;
     return snackbarButtonElement;
+    } else throw 'A callback or button text is missing';
+    
 }
 
 const getTransitionDelay = () => {

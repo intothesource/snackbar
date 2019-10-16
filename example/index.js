@@ -1,12 +1,20 @@
 import { Snackbar } from '../snackbar.js';
 
-const frikandelSpeciaal = () => {
-    Snackbar('An apple a day and such', 'eat apple', 100);
+const triggerAppleNotification = () => {
+    Snackbar('An apple a day keeps your mom at bay', 2000, 'eat apple', appleCallback);
 }
 
-const broodjeKroket = () => {
-    Snackbar('Bananas something something', 'eat banana', 3000);
+const triggerBananaNotification = () => {
+    Snackbar('Bananas something something', 4000, 'eat banana', bananaCallback);
 }
 
-window.frikandelSpeciaal = frikandelSpeciaal;
-window.broodjeKroket = broodjeKroket;
+const appleCallback = () => {
+    document.body.querySelector('[data-callback-output]').innerHTML += "🍎";
+}
+
+const bananaCallback = () => {
+    document.body.querySelector('[data-callback-output]').innerHTML += "🍌";
+}
+
+window.triggerAppleNotification = triggerAppleNotification
+window.triggerBananaNotification = triggerBananaNotification
