@@ -1,7 +1,7 @@
 import { Snackbar } from '../snackbar.js';
 
 const frikandelSpeciaal = () => {
-    Snackbar('An apple a day and such', 'eat apple', 3000);
+    Snackbar('An apple a day and such', 'eat apple', 100);
 }
 
 const broodjeKroket = () => {

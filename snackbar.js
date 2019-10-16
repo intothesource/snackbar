@@ -28,20 +28,26 @@ const snackbarLooper = () => {
         } else {
             setTimeout(() => {
                 snackbarLooper();
-            }, snackbarDelay);
+            }, snackbarDelay + getTransitionDelay());
         }
-    }, snackbarArray[0].time);
+    }, snackbarArray[0].time + getTransitionDelay());
 }
 
 const showSnackbar = snackObject => {
     if (document && snackObject) {
         document.body.appendChild(snackObject.element);
+        setTimeout(() => {
+            document.body.querySelector(`[${DATA_CONTAINER}]`).classList.add('active');
+        });
     }
 }
 
 const removeSnackbar = () => {
     if (document.body.querySelector(`[${DATA_CONTAINER}]`)) {
-        document.body.querySelector(`[${DATA_CONTAINER}]`).remove();
+        document.body.querySelector(`[${DATA_CONTAINER}]`).classList.remove('active');
+        setTimeout(() => {
+            document.body.querySelector(`[${DATA_CONTAINER}]`).remove();
+        }, getTransitionDelay());
     }
 }
 
@@ -72,4 +78,15 @@ const createButtonElement = (button) => {
     snackbarButtonElement.setAttribute(DATA_BUTTON, '');
     snackbarButtonElement.innerHTML = button;
     return snackbarButtonElement;
+}
+
+const getTransitionDelay = () => {
+    // Get transition time if set
+    let transitionStyling = JSON.stringify(getComputedStyle(document.body.querySelector(`[${DATA_CONTAINER}]`)).transition);
+    let transitionDelay = 0;
+    if (transitionStyling) {
+        // Parse transition delay and convert to ms
+        transitionDelay = parseFloat(transitionStyling.split(' ')[1]) * 1000;
+    }
+    return transitionDelay
 }
