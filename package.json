@@ -14,7 +14,7 @@
   "files": [
     "./snackbar.js",
     "./snackbar.css",
-    "./constants.js",
+    "./constants.js"
   ],
   "repository": {
     "type": "git",
