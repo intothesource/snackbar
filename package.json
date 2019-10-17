@@ -12,9 +12,9 @@
     "access": "public"
   },
   "files": [
-    "./snackbar.js",
-    "./snackbar.css",
-    "./constants.js"
+    "snackbar.js",
+    "snackbar.css",
+    "constants.js"
   ],
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/intothesource/snackbar/issues"
   },
-  "homepage": "https://github.com/intothesource/snackbar#readme"
+  "homepage": "https://github.com/intothesource/snackbar#readme",
+  "devDependencies": {
+    "np": "^5.1.1"
+  }
 }
