@@ -1,6 +1,6 @@
 {
   "name": "@intothesource/snackbar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small fadein notifications",
   "private": false,
   "main": "snackbar.js",
