@@ -1,11 +1,12 @@
 {
   "name": "@intothesource/snackbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small fadein notifications",
   "private": false,
   "main": "snackbar.js",
   "module": "snackbar.js",
   "scripts": {
+    "test": "./node_modules/.bin/cypress open",
     "release": "np"
   },
   "publishConfig": {
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/intothesource/snackbar#readme",
   "devDependencies": {
+    "cypress": "^3.4.1",
     "np": "^5.1.1"
   }
 }
